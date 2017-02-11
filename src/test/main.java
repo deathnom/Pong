@@ -8,7 +8,6 @@ public class main {
 		// TODO Auto-generated method stub
 		GUI x = new GUI();
 		GUI.initialize();
-		//the pickles are sharp
 	}
 
 }
