@@ -15,6 +15,8 @@ import javax.swing.JPanel;
 
 public class GUI{
 	 public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
+	 public static int x = 0;
+	 public static int y=0;
 	public GUI(){
 		
 	}
@@ -53,8 +55,8 @@ public class GUI{
 	public static void addPanel(JFrame frame){
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panel2 = new JPanel(new BorderLayout());
-		JLabel score1 = new JLabel ("Player 1: +x");
-		JLabel score2 = new JLabel("Player 2: +y");
+		JLabel score1 = new JLabel ("Player 1: "+x);
+		JLabel score2 = new JLabel("Player 2: "+y);
 		panel.add(panel2);
 		score1.setFont(font1);
 		score2.setFont(font1);
