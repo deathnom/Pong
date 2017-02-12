@@ -1,6 +1,8 @@
 package View;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -8,12 +10,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-
-
-
-
-public class GUI {
-
+public class GUI{
 	
 	public GUI(){
 		
@@ -33,10 +30,13 @@ public class GUI {
 	
 	
 	}
+	
+	
+	
 	public static void addMenu(JFrame frame/*, Drawing drawingPanel*/) {
 		JMenuItem Newgame = new JMenuItem("New Game");
 		//startsAnimation.addActionListener(drawingPanel);
-		JMenuItem Pause = new JMenuItem("Pause");
+		JMenuItem Pause = new JMenuItem("Pause/Unpause");
 		//stopsAnimation.addActionListener(drawingPanel);
 		JMenu menu = new JMenu("Options");
 		JMenuBar menuBar = new JMenuBar();
@@ -48,7 +48,7 @@ public class GUI {
 	}
 	
 	public static void addPanel(JFrame frame){
-		JPanel panel =new JPanel();
+		JPanel panel = new JPanel();
 		panel.setBackground(Color.GRAY);
 		frame.add(panel);
 	}
