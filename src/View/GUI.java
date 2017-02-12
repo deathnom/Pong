@@ -49,6 +49,7 @@ public class GUI{
 		menu.add(Pause);
 		menuBar.add(menu);
 		frame.setJMenuBar(menuBar);
+		
 	}
 	
 	public static void addPanel(JFrame frame){
