@@ -67,16 +67,4 @@ public class Paddle extends JPanel implements MouseMotionListener, MouseListener
 	}
 	
 	
-<<<<<<< HEAD
-	public paddle
 }
-=======
-
-	 
-	      
-	}
-	
-	
-	
-
->>>>>>> 0ee93fd3d7143c57c49db6ecedabba3d32b0465c

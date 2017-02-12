@@ -11,11 +11,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-<<<<<<< HEAD
-import Model.Paddle;
-=======
-import Model.Ball;
->>>>>>> 2dac48de8a61a6ac4c85cb2a5ddc742e845032e2
 
 public class GUI{
 	 public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
@@ -35,13 +30,7 @@ public class GUI{
 	Ball b = new Ball();
 	addMenu(frame);
 	addPanel(frame);
-<<<<<<< HEAD
 
-=======
-	frame.getContentPane().add(b);
->>>>>>> 2dac48de8a61a6ac4c85cb2a5ddc742e845032e2
-	frame.setVisible(true);
-	
 	
 	
 	}
