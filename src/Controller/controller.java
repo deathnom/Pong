@@ -18,8 +18,12 @@ public class controller implements ActionListener{
 				
 			}else if(mi.getText().equals("Pause/Unpause")){
 				if(paused == true){
+					paused=false;
+					this.timer.start();
 					
 				}else{
+					paused=true;
+					this.timer.stop();
 					
 				}
 			}

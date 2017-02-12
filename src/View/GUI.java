@@ -35,9 +35,9 @@ public class GUI{
 	
 	public static void addMenu(JFrame frame/*, Drawing drawingPanel*/) {
 		JMenuItem Newgame = new JMenuItem("New Game");
-		//startsAnimation.addActionListener(drawingPanel);
+		
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
-		//stopsAnimation.addActionListener(drawingPanel);
+		
 		JMenu menu = new JMenu("Options");
 		JMenuBar menuBar = new JMenuBar();
 		

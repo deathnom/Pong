@@ -104,7 +104,7 @@ public class Ball extends JPanel{
 		@Override
 		public void paint(Graphics g) {
 			super.paint(g);
-					g.setColor(ball.getColor());
+					g.setColor(Ball.getColor());
 					g.fillOval(ball.getX(), ball.getY(), ball.getWidth(),ball.getWidth());
 				}
 			
