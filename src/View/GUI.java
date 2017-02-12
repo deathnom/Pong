@@ -3,8 +3,6 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,7 +11,11 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+<<<<<<< HEAD
 import Model.Paddle;
+=======
+import Model.Ball;
+>>>>>>> 2dac48de8a61a6ac4c85cb2a5ddc742e845032e2
 
 public class GUI{
 	 public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
@@ -30,9 +32,14 @@ public class GUI{
 	frame.setLocation(75,0);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	Ball b = new Ball();
 	addMenu(frame);
 	addPanel(frame);
+<<<<<<< HEAD
 
+=======
+	frame.getContentPane().add(b);
+>>>>>>> 2dac48de8a61a6ac4c85cb2a5ddc742e845032e2
 	frame.setVisible(true);
 	
 	
