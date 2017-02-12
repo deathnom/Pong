@@ -10,10 +10,11 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
 import Model.Paddle;
 
 
-public class GUI{
+public class GUI extends JFrame{
 	 public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
 	 public static int x = 0;
 	 public static int y=0;
@@ -26,8 +27,8 @@ public class GUI{
 	frame.setSize(1800, 1000);
 	frame.setResizable(false);
 	frame.setLocation(75,0);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	frame.setExtendedState(MAXIMIZED_BOTH);
 	addMenu(frame);
 	addPanel(frame);
 
