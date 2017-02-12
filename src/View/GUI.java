@@ -13,6 +13,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import Model.Paddle;
+
 public class GUI{
 	 public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
 	 public static int x = 0;
@@ -30,6 +32,7 @@ public class GUI{
 	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	addMenu(frame);
 	addPanel(frame);
+
 	frame.setVisible(true);
 	
 	
@@ -66,7 +69,12 @@ public class GUI{
 		panel2.add(score2,BorderLayout.NORTH);
 		panel.setBackground(Color.GRAY);
 		panel2.setBackground(Color.GRAY);
+		addObjects(panel2);
 		frame.add(panel);
+	}
+	public static void addObjects (JPanel panel){
+		Paddle paddle1 = new Paddle();
+		panel.add(paddle1);
 	}
 }
 	
