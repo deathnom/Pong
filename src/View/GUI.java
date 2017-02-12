@@ -10,6 +10,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import Model.Paddle;
 
 
 public class GUI{
@@ -27,7 +28,6 @@ public class GUI{
 	frame.setLocation(75,0);
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-	Ball b = new Ball();
 	addMenu(frame);
 	addPanel(frame);
 
@@ -37,7 +37,7 @@ public class GUI{
 	
 	
 	
-	public static void addMenu(JFrame frame/*, Drawing drawingPanel*/) {
+	public static void addMenu(JFrame frame) {
 		JMenuItem Newgame = new JMenuItem("New Game");
 		
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
