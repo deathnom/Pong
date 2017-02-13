@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import Model.Ball;
 import Model.Paddle;
 
-public class GUI {
+public class GUI extends JFrame{
 	public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
 	public static int x = 0;
 	public static int y = 0;
@@ -31,8 +31,8 @@ public class GUI {
 		frame.setSize(1900, 1000);
 		frame.setResizable(false);
 		frame.setLocation(15, 0);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		frame.setExtendedState(MAXIMIZED_BOTH);
 	
 		addMenu(frame);
 		addPanel(frame);
@@ -65,7 +65,6 @@ public class GUI {
 		JLabel score2 = new JLabel("Player 2: " + y);
 		panel.add(panel2);
 		panel2.add(panel3);
-		panel3.add(p);
 		panel3.add(b);
 		panel2.add(p);
 		score1.setFont(font1);

@@ -1,12 +1,10 @@
 package Model;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.Random;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -16,7 +14,6 @@ import javax.swing.Timer;
 
 
 public class Ball extends JPanel implements ActionListener, MouseListener{
-	private static Random gen = new Random();
 	private int x = 1280, y = 657, xVelocity = 20, yVelocity = 20, width = 65, height = 65;
 	private Timer timer = new Timer((int) (30), this);
 	private boolean right = true;
@@ -30,7 +27,6 @@ public class Ball extends JPanel implements ActionListener, MouseListener{
 	@Override
 	public void paint(Graphics g){
 		super.paint(g);
-		g.setColor(Color.black);
 		g.fillOval(x, y, width, height);
 		this.addMouseListener(this);
 	}
