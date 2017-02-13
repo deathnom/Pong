@@ -16,7 +16,7 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 	private static final int PAD_2_X=1750;
 	private static int pad2y = 20;
 	private static final int PAD_WIDTH = 20;
-	private static final int PAD_HEIGHT = 300;
+	private static final int PAD_HEIGHT = 200;
 	private long lastPressProcessed = 0;
 
 	@Override
@@ -43,7 +43,9 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getY()-(PAD_HEIGHT/2)> 0&&e.getY()-(PAD_HEIGHT/2)<620){
 		pad1y= e.getY()-(PAD_HEIGHT/2);
+		}
 		this.repaint();
 	}
 	
@@ -81,18 +83,26 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		  if(System.currentTimeMillis() - lastPressProcessed > 100) {
+=======
+		  if(System.currentTimeMillis() - lastPressProcessed > 10) {
+>>>>>>> 7676e8bea3fe28f1c77485b99f1dc28ce30223e0
 	            //Do your work here...
 	            
 		if(e.getKeyCode()== KeyEvent.VK_W){
 			System.out.println("w pressed");
+			if (pad2y>0){
 		pad2y-=20;
+			}
 		
 		}
 		else if(e.getKeyCode()==KeyEvent.VK_S){
 			System.out.println("s pressed");
-			pad2y+=20;
 			
+			if(pad2y<620){
+			pad2y+=20;
+			}
 		}
 		this.repaint();
 		lastPressProcessed = System.currentTimeMillis();
