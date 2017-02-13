@@ -22,7 +22,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener{
 	}
 	
 	@Override
-	public void paint(Graphics g){
+	public void paintComponent(Graphics g){
 		super.paint(g);
 		g.fillOval(x, y, width, height);
 		this.addMouseListener(this);

@@ -2,6 +2,7 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 
@@ -13,6 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import Model.Ball;
+import Model.Paddle;
 
 public class GUI {
 	public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
@@ -26,9 +28,9 @@ public class GUI {
 	public static void initialize() {
 
 		JFrame frame = new JFrame("Pong");
-		frame.setSize(1800, 1000);
+		frame.setSize(1900, 1000);
 		frame.setResizable(false);
-		frame.setLocation(75, 0);
+		frame.setLocation(15, 0);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	
@@ -55,20 +57,23 @@ public class GUI {
 
 	public static void addPanel(JFrame frame) {
 		Ball b = new Ball();
+		Paddle p = new Paddle();
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panel2 = new JPanel(new BorderLayout());
-		JPanel panel3 = new JPanel(new BorderLayout());
+		JPanel panel3 = new JPanel(new FlowLayout());
 		JLabel score1 = new JLabel("Player 1: " + x);
 		JLabel score2 = new JLabel("Player 2: " + y);
 		panel.add(panel2);
 		panel2.add(panel3);
-		panel2.add(b);
+		panel3.add(p);
+		panel3.add(b);
+		panel2.add(p);
 		score1.setFont(font1);
 		score2.setFont(font1);
 		score1.setForeground(Color.WHITE);
-		score2.setForeground(Color.BLACK);
-		panel.add(score1,BorderLayout.WEST );
-		panel2.add(score2, BorderLayout.EAST);
+		score2.setForeground(Color.WHITE);
+		panel.add(score1,BorderLayout.NORTH );
+		panel2.add(score2, BorderLayout.NORTH);
 		panel.setBackground(Color.GRAY);
 		panel2.setBackground(Color.GRAY);
 		frame.add(panel);
