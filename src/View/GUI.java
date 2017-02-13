@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,9 +42,8 @@ public class GUI extends JFrame{
 
 	public static void addMenu(JFrame frame/* , Drawing drawingPanel */) {
 		JMenuItem Newgame = new JMenuItem("New Game");
-
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
-
+		JMenuItem wiggle = new JMenuItem("Wiggle Pong");
 		JMenu menu = new JMenu("Options");
 		JMenuBar menuBar = new JMenuBar();
 

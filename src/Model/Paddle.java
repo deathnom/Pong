@@ -81,7 +81,7 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		  if(System.currentTimeMillis() - lastPressProcessed > 1) {
+		  if(System.currentTimeMillis() - lastPressProcessed > 100) {
 	            //Do your work here...
 	            
 		if(e.getKeyCode()== KeyEvent.VK_W){
