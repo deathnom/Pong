@@ -66,6 +66,7 @@ public class GUI extends JFrame{
 		panel.add(panel2);
 		panel2.add(panel3);
 		panel3.add(b);
+		panel2.add(b);
 		panel2.add(p);
 		score1.setFont(font1);
 		score2.setFont(font1);

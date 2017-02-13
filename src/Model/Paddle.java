@@ -17,6 +17,7 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 	private static int pad2y = 20;
 	private static final int PAD_WIDTH = 20;
 	private static final int PAD_HEIGHT = 300;
+	private long lastPressProcessed = 0;
 
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -26,8 +27,10 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 		g.fillRect(PAD_2_X, pad2y, PAD_WIDTH, PAD_HEIGHT);
 		this.setFocusable(true);
 		this.addMouseMotionListener(this);
+		this.requestFocus(true);
 		this.addKeyListener(this);
 		setBackground(Color.GRAY);
+		
 	}
 
 	
@@ -78,24 +81,29 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		
+		  if(System.currentTimeMillis() - lastPressProcessed > 1) {
+	            //Do your work here...
+	            
 		if(e.getKeyCode()== KeyEvent.VK_W){
 			System.out.println("w pressed");
-		pad2y+=40;
-		this.repaint();
+		pad2y-=20;
+		
 		}
-		if(e.getKeyCode()==KeyEvent.VK_S){
+		else if(e.getKeyCode()==KeyEvent.VK_S){
 			System.out.println("s pressed");
-			pad2y-=40;
-			this.repaint();
+			pad2y+=20;
+			
 		}
+		this.repaint();
+		lastPressProcessed = System.currentTimeMillis();
+		  }
 	}
 
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		this.repaint();
 	}
 
 
