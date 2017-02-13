@@ -3,6 +3,7 @@ package View;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridBagLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,10 +31,10 @@ public class GUI {
 		frame.setLocation(75, 0);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		Ball b = new Ball();
+	
 		addMenu(frame);
 		addPanel(frame);
-		frame.getContentPane().add(b);
+		
 		frame.setVisible(true);
 
 	}
@@ -53,17 +54,21 @@ public class GUI {
 	}
 
 	public static void addPanel(JFrame frame) {
+		Ball b = new Ball();
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panel2 = new JPanel(new BorderLayout());
+		JPanel panel3 = new JPanel(new BorderLayout());
 		JLabel score1 = new JLabel("Player 1: " + x);
 		JLabel score2 = new JLabel("Player 2: " + y);
 		panel.add(panel2);
+		panel2.add(panel3);
+		panel2.add(b);
 		score1.setFont(font1);
 		score2.setFont(font1);
 		score1.setForeground(Color.WHITE);
-		score2.setForeground(Color.WHITE);
-		panel.add(score1, BorderLayout.NORTH);
-		panel2.add(score2, BorderLayout.NORTH);
+		score2.setForeground(Color.BLACK);
+		panel.add(score1,BorderLayout.WEST );
+		panel2.add(score2, BorderLayout.EAST);
 		panel.setBackground(Color.GRAY);
 		panel2.setBackground(Color.GRAY);
 		frame.add(panel);
