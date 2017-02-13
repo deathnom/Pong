@@ -11,9 +11,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import Model.Ball;
+import Model.Paddle;
 
-public class GUI{
+
+public class GUI extends JFrame{
 	 public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
 	 public static int x = 0;
 	 public static int y=0;
@@ -26,21 +27,18 @@ public class GUI{
 	frame.setSize(1800, 1000);
 	frame.setResizable(false);
 	frame.setLocation(75,0);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-	Ball b = new Ball();
+	frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	frame.setExtendedState(MAXIMIZED_BOTH);
 	addMenu(frame);
 	addPanel(frame);
-	frame.getContentPane().add(b);
-	frame.setVisible(true);
-	
+
 	
 	
 	}
 	
 	
 	
-	public static void addMenu(JFrame frame/*, Drawing drawingPanel*/) {
+	public static void addMenu(JFrame frame) {
 		JMenuItem Newgame = new JMenuItem("New Game");
 		
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
@@ -52,6 +50,7 @@ public class GUI{
 		menu.add(Pause);
 		menuBar.add(menu);
 		frame.setJMenuBar(menuBar);
+		
 	}
 	
 	public static void addPanel(JFrame frame){
@@ -68,7 +67,12 @@ public class GUI{
 		panel2.add(score2,BorderLayout.NORTH);
 		panel.setBackground(Color.GRAY);
 		panel2.setBackground(Color.GRAY);
+		addObjects(panel2);
 		frame.add(panel);
+	}
+	public static void addObjects (JPanel panel){
+		Paddle paddle1 = new Paddle();
+		panel.add(paddle1);
 	}
 }
 	
