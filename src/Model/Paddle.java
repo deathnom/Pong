@@ -29,7 +29,7 @@ public class Paddle extends JPanel implements MouseMotionListener,KeyListener, M
 		this.addMouseMotionListener(this);
 		this.requestFocus(true);
 		this.addKeyListener(this);
-		setBackground(Color.GRAY);
+	//setBackground(Color.GRAY);
 		
 	}
 
