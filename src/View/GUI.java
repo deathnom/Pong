@@ -35,7 +35,6 @@ public class GUI extends JFrame{
 	
 		addMenu(frame);
 		addPanel(frame);
-		
 		frame.setVisible(true);
 
 	}
@@ -58,14 +57,12 @@ public class GUI extends JFrame{
 		Paddle p = new Paddle();
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panel2 = new JPanel(new BorderLayout());
-		JPanel panel3 = new JPanel(new FlowLayout());
 		JLabel score1 = new JLabel("Player 1: " + x);
 		JLabel score2 = new JLabel("Player 2: " + y);
 		panel.add(panel2);
-		panel2.add(panel3);
-		panel3.add(b);
 		panel2.add(b);
 		panel2.add(p);
+		p.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.5f));
 		score1.setFont(font1);
 		score2.setFont(font1);
 		score1.setForeground(Color.WHITE);
