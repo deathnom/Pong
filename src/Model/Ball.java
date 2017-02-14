@@ -6,8 +6,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+import View.GUI;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -23,12 +27,12 @@ import javax.swing.JPanel;
 
 
 public class Ball extends JPanel implements ActionListener, MouseListener, MouseMotionListener, KeyListener{
-	private int x = 1280, y = 657, xVelocity = 20, yVelocity = 20, width = 65, height = 65;
+	private int x = 900, y = 350, xVelocity = 20, yVelocity = 20, width = 65, height = 65;
 	private Timer timer = new Timer((int) (30), this);
 	private boolean right = true;
 	public int player1 = 0;
 	public int player2 = 0;
-	private static final int PAD_1_X = 20;
+	private static final int PAD_1_X = 80;
 	private static int pad1y = 20;
 	private static final int PAD_2_X=1750;
 	private static int pad2y = 20;
@@ -45,7 +49,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		super.paint(g);
 		g.fillOval(x, y, width, height);
 		this.addMouseListener(this);
-		
+		this.setBackground(Color.GRAY);
 	}
 	@Override
 	protected void paintComponent(Graphics g) {
@@ -57,7 +61,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		this.addMouseMotionListener(this);
 		this.requestFocus(true);
 		this.addKeyListener(this);
-	//setBackground(Color.GRAY);
+		setBackground(Color.GRAY);
 	}
 
 	
@@ -72,19 +76,34 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		if(x >= (this.getWidth() - width)){
 			player1++;
 			timer.stop();
-			x = 1280;
-			y = 657;
+			x = 900;
+			y = 350;
 			right = false;
+			GUI.x++;
+			GUI.score1.setText("Player 1: " + GUI.x);
+			
 		}
 		if(x <= 0){
 			player2++;
 			timer.stop();
-			x = 1280;
-			y = 657;
+			x = 900;
+			y = 350;
 			right = true;
+			GUI.y++;
+			GUI.score2.setText("Player 2: " + GUI.y);
 		}
 		if(y >= (this.getHeight() - height) || y <= 0){
 			yVelocity *= -1;
+		}
+		
+		//bouncing off paddles code 
+		//x is ball horizontal
+		
+		if((x==(PAD_1_X)||x==(PAD_1_X+PAD_WIDTH))&&(y==pad1y+PAD_HEIGHT)){
+			xVelocity*=-1;
+		}
+		if((x==(PAD_2_X)||x==(PAD_2_X+PAD_WIDTH))&&(y==pad2y+PAD_HEIGHT)){
+			xVelocity*=-1;
 		}
 		this.repaint();
 	}
