@@ -19,7 +19,8 @@ public class GUI extends JFrame{
 	public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
 	public static int x = 0;
 	public static int y = 0;
-
+	public static JLabel score1 = new JLabel();
+	public static JLabel score2 = new JLabel();
 	public GUI() {
 
 	}
@@ -57,22 +58,21 @@ public class GUI extends JFrame{
 		Paddle p = new Paddle();
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panel2 = new JPanel(new BorderLayout());
-		JLabel score1 = new JLabel("Player 1: " + x);
-		JLabel score2 = new JLabel("Player 2: " + y);
+		 score1.setText("Player 1: " + x);
+		score2.setText("Player 2: " + y);
+		panel.add(score1,BorderLayout.NORTH );
+		panel2.add(score2, BorderLayout.NORTH);
 		panel.add(panel2);
 
 		
 		panel2.add(b);
-		panel2.add(b);
-		panel2.add(p);
-		p.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.5f));
+
 
 		score1.setFont(font1);
 		score2.setFont(font1);
 		score1.setForeground(Color.WHITE);
 		score2.setForeground(Color.WHITE);
-		panel.add(score1,BorderLayout.NORTH );
-		panel2.add(score2, BorderLayout.NORTH);
+		
 		panel.setBackground(Color.GRAY);
 		panel2.setBackground(Color.GRAY);
 		frame.add(panel);
