@@ -46,7 +46,7 @@ public class GUI extends JFrame{
 		JMenuItem wiggle = new JMenuItem("Wiggle Pong");
 		JMenu menu = new JMenu("Options");
 		JMenuBar menuBar = new JMenuBar();
-		menu.add(wiggle);
+
 		menu.add(Newgame);
 		menu.add(Pause);
 		menuBar.add(menu);
@@ -63,6 +63,7 @@ public class GUI extends JFrame{
 		panel.add(score1,BorderLayout.NORTH );
 		panel2.add(score2, BorderLayout.NORTH);
 		panel.add(panel2);
+
 		panel2.add(b);
 		score1.setFont(font1);
 		score2.setFont(font1);
