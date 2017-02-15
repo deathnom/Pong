@@ -66,14 +66,9 @@ public class GUI extends JFrame{
 
 		
 		panel2.add(b);
-<<<<<<< HEAD
 //		panel2.add(b);
 //		panel2.add(p);
 		p.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.5f));
-=======
-
->>>>>>> 9bead2213da80e4746eeb6e0589837c293561b56
-
 		score1.setFont(font1);
 		score2.setFont(font1);
 		score1.setForeground(Color.WHITE);
