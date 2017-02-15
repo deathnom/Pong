@@ -1,26 +1,21 @@
 package Model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-
-import View.GUI;
-
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.Random;
 
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import View.GUI;
 
 
 
@@ -28,6 +23,7 @@ import javax.swing.JPanel;
 
 public class Ball extends JPanel implements ActionListener, MouseListener, MouseMotionListener, KeyListener{
 	private int x = 900, y = 350, xVelocity = 20, yVelocity = 20, width = 65, height = 65;
+	private Random gen;
 	private Timer timer = new Timer((int) (30), this);
 	private boolean right = true;
 	public int player1 = 0;
