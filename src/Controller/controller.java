@@ -21,7 +21,7 @@ public class controller implements ActionListener{
 					paused = false;
 					this.timer.start();
 					
-				}else if (paused == false){
+				}else{
 					paused = true;
 					this.timer.stop();
 				}

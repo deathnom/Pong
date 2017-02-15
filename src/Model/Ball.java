@@ -191,7 +191,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 				  this.repaint();
 				 
 			  }
-			  else if (!paused){
+			  else{
 		System.out.println("paused");
 		paused=true;
 		timer.stop();
