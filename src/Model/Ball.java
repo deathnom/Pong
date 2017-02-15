@@ -163,12 +163,12 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 
 		
 
-		  if(System.currentTimeMillis() - lastPressProcessed > 10) {
+		  if(System.currentTimeMillis() - lastPressProcessed > 1) {
 	            
 		if(e.getKeyCode()== KeyEvent.VK_UP){
 			System.out.println("UP pressed");
 			if (pad2y>0){
-		pad2y-=20;
+		pad2y-=35;
 			}
 		
 		}
@@ -176,7 +176,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 			System.out.println("DOWN pressed");
 			
 			if(pad2y<620){
-			pad2y+=20;
+			pad2y+=35;
 			}
 		}
 		this.repaint();
