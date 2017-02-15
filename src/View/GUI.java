@@ -2,8 +2,9 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 import Model.Ball;
 import Model.Paddle;
 
-public class GUI extends JFrame{
+public class GUI extends JFrame implements ActionListener{
 	public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
 	public static int x = 0;
 	public static int y = 0;
@@ -26,7 +27,7 @@ public class GUI extends JFrame{
 	}
 
 	public static void initialize() {
-
+		GUI g = new GUI();
 		JFrame frame = new JFrame("Pong");
 		frame.setSize(1900, 1000);
 		frame.setResizable(false);
@@ -34,13 +35,13 @@ public class GUI extends JFrame{
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setExtendedState(MAXIMIZED_BOTH);
 	
-		addMenu(frame);
-		addPanel(frame);
+		g.addMenu(frame);
+		g.addPanel(frame);
 		frame.setVisible(true);
 
 	}
 
-	public static void addMenu(JFrame frame/* , Drawing drawingPanel */) {
+	public void addMenu(JFrame frame/* , Drawing drawingPanel */) {
 		JMenuItem Newgame = new JMenuItem("New Game");
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
 		JMenuItem wiggle = new JMenuItem("Wiggle Pong");
@@ -48,12 +49,16 @@ public class GUI extends JFrame{
 		JMenuBar menuBar = new JMenuBar();
 
 		menu.add(Newgame);
+		Newgame.addActionListener(this);
 		menu.add(Pause);
+		Pause.addActionListener(this);
+		menu.add(wiggle);
+		wiggle.addActionListener(this);
 		menuBar.add(menu);
 		frame.setJMenuBar(menuBar);
 	}
 
-	public static void addPanel(JFrame frame) {
+	public void addPanel(JFrame frame) {
 		Ball b = new Ball();
 		Paddle p = new Paddle();
 		JPanel panel = new JPanel(new BorderLayout());
@@ -63,7 +68,6 @@ public class GUI extends JFrame{
 		panel.add(score1,BorderLayout.NORTH );
 		panel2.add(score2, BorderLayout.NORTH);
 		panel.add(panel2);
-
 		panel2.add(b);
 		score1.setFont(font1);
 		score2.setFont(font1);
@@ -73,5 +77,21 @@ public class GUI extends JFrame{
 		panel.setBackground(Color.GRAY);
 		panel2.setBackground(Color.GRAY);
 		frame.add(panel);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JMenuItem item = (JMenuItem) e.getSource();
+		if(e.getSource() instanceof JMenuItem){
+			if(item.getText().equals("New Game")){
+				x = 0;
+				y = 0;
+				score1.setText("Player 1: 0");
+				score2.setText("Player 2: 0");
+			}else if(item.getText().equals("Pause/Unpause")){
+				
+			}else if(item.getText().equals("Wiggle Pong")){
+			}
+		}
 	}
 }
