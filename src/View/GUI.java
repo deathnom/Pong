@@ -41,10 +41,11 @@ public class GUI extends JFrame implements ActionListener{
 
 	}
 
-	public void addMenu(JFrame frame/* , Drawing drawingPanel */) {
+	public void addMenu(JFrame frame) {
+		Ball b = new Ball();
 		JMenuItem Newgame = new JMenuItem("New Game");
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
-		JMenuItem wiggle = new JMenuItem("Wiggle Pong");
+		JMenuItem exit = new JMenuItem("Exit");
 		JMenu menu = new JMenu("Options");
 		JMenuBar menuBar = new JMenuBar();
 
@@ -52,8 +53,8 @@ public class GUI extends JFrame implements ActionListener{
 		Newgame.addActionListener(this);
 		menu.add(Pause);
 		Pause.addActionListener(this);
-		menu.add(wiggle);
-		wiggle.addActionListener(this);
+		menu.add(exit);
+		exit.addActionListener(this);
 		menuBar.add(menu);
 		frame.setJMenuBar(menuBar);
 	}
@@ -88,9 +89,8 @@ public class GUI extends JFrame implements ActionListener{
 				y = 0;
 				score1.setText("Player 1: 0");
 				score2.setText("Player 2: 0");
-			}else if(item.getText().equals("Pause/Unpause")){
-				
-			}else if(item.getText().equals("Wiggle Pong")){
+			}else if(item.getText().equals("Exit")){
+				System.exit(0);
 			}
 		}
 	}
