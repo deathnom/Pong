@@ -95,16 +95,10 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		if(y >= (this.getHeight() - height) || y <= 0){
 			yVelocity *= -1;
 		}
-		
-		//bouncing off paddles code 
-		//x is ball horizontal
-		
-		if((x==(PAD_1_X)||x==(PAD_1_X+PAD_WIDTH))&&(y==pad1y+PAD_HEIGHT)){
-			xVelocity*=-1;
+		if(x >=(this.getWidth()-width-20)|| x<=20){
+			xVelocity*=1;
 		}
-		if((x==(PAD_2_X)||x==(PAD_2_X+PAD_WIDTH))&&(y==pad2y+PAD_HEIGHT)){
-			xVelocity*=-1;
-		}
+		
 		this.repaint();
 	}
 
