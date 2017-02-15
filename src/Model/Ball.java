@@ -34,7 +34,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 	public int player2 = 0;
 	private static final int PAD_1_X = 80;
 	private static int pad1y = 20;
-	private static final int PAD_2_X=1750;
+	private static final int PAD_2_X=1800;
 	private static int pad2y = 20;
 	private static final int PAD_WIDTH = 20;
 	private static final int PAD_HEIGHT = 200;
@@ -95,9 +95,18 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		if(y >= (this.getHeight() - height) || y <= 0){
 			yVelocity *= -1;
 		}
-		if(x >=(this.getWidth()-width-20)|| x<=20){
-			xVelocity*=1;
+		
+		//bouncing off paddles code 
+		//x is ball horizontal
+		
+		if((x==PAD_1_X||x==(PAD_1_X+PAD_WIDTH))&&(y<=pad1y+PAD_HEIGHT&&y>=pad1y)){
+			xVelocity*=-1;
 		}
+		if((x==PAD_2_X||x==(PAD_2_X+PAD_WIDTH))&&(y<=pad2y+PAD_HEIGHT&&y>=pad2y)){
+			xVelocity*=-1;
+		}
+				
+			
 		
 		this.repaint();
 	}
@@ -191,5 +200,3 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 
 	
 }
-
-

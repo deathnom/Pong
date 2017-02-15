@@ -66,7 +66,6 @@ public class GUI extends JFrame{
 
 		
 		panel2.add(b);
-		p.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.5f));
 
 
 		score1.setFont(font1);
@@ -79,4 +78,3 @@ public class GUI extends JFrame{
 		frame.add(panel);
 	}
 }
-
