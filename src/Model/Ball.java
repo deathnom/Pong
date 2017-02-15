@@ -39,7 +39,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 	private static final int PAD_WIDTH = 20;
 	private static final int PAD_HEIGHT = 200;
 	private long lastPressProcessed = 0;
-	
+	private boolean paused=false;
 	public Ball(){
 		
 	}
@@ -182,7 +182,23 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		this.repaint();
 		lastPressProcessed = System.currentTimeMillis();
 		  }
+	
+		  else if(e.getKeyCode()==KeyEvent.VK_P){
+			  if (paused){
+				  System.out.println("unpaused");
+				  paused=false;
+				  timer.start();
+				  this.repaint();
+				 
+			  }
+			  else if (!paused){
+		System.out.println("paused");
+		paused=true;
+		timer.stop();
+		this.repaint();
+			  }
 	}
+}
 
 
 	@Override
@@ -193,10 +209,9 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
-	}
-
 	
+}
 }

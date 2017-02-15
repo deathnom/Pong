@@ -46,7 +46,7 @@ public class GUI extends JFrame{
 		JMenuItem wiggle = new JMenuItem("Wiggle Pong");
 		JMenu menu = new JMenu("Options");
 		JMenuBar menuBar = new JMenuBar();
-
+		menu.add(wiggle);
 		menu.add(Newgame);
 		menu.add(Pause);
 		menuBar.add(menu);
