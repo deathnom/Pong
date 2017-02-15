@@ -13,8 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
-import Model.Ball;
-import Model.Paddle;
+import Model.BallAndPaddle;
 
 public class GUI extends JFrame implements ActionListener{
 	public static Font font1 = new Font("Sans-serif", Font.BOLD, 40);
@@ -42,7 +41,7 @@ public class GUI extends JFrame implements ActionListener{
 	}
 
 	public void addMenu(JFrame frame) {
-		Ball b = new Ball();
+		BallAndPaddle b = new BallAndPaddle();
 		JMenuItem Newgame = new JMenuItem("New Game");
 		JMenuItem Pause = new JMenuItem("Pause/Unpause");
 		JMenuItem exit = new JMenuItem("Exit");
@@ -60,8 +59,7 @@ public class GUI extends JFrame implements ActionListener{
 	}
 
 	public void addPanel(JFrame frame) {
-		Ball b = new Ball();
-		Paddle p = new Paddle();
+		BallAndPaddle b = new BallAndPaddle();
 		JPanel panel = new JPanel(new BorderLayout());
 		JPanel panel2 = new JPanel(new BorderLayout());
 		 score1.setText("Player 1: " + x);

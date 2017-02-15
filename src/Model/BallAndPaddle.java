@@ -1,46 +1,42 @@
 package Model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
-
-import View.GUI;
-
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.Random;
 
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+
+import View.GUI;
 
 
 
 
 
-public class Paddle extends JPanel implements ActionListener, MouseListener, MouseMotionListener, KeyListener{
+public class BallAndPaddle extends JPanel implements ActionListener, MouseListener, MouseMotionListener, KeyListener{
 	private int x = 900, y = 350, xVelocity = 20, yVelocity = 20, width = 65, height = 65;
+	private Random gen;
 	private Timer timer = new Timer((int) (30), this);
 	private boolean right = true;
 	public int player1 = 0;
 	public int player2 = 0;
 	private static final int PAD_1_X = 80;
 	private static int pad1y = 20;
-	private static final int PAD_2_X=1750;
+	private static final int PAD_2_X=1800;
 	private static int pad2y = 20;
 	private static final int PAD_WIDTH = 20;
 	private static final int PAD_HEIGHT = 200;
 	private long lastPressProcessed = 0;
-	
-	public Paddle(){
+	private boolean paused=false;
+	public BallAndPaddle(){
 		
 	}
 	
@@ -99,12 +95,15 @@ public class Paddle extends JPanel implements ActionListener, MouseListener, Mou
 		//bouncing off paddles code 
 		//x is ball horizontal
 		
-		if((x==(PAD_1_X)||x==(PAD_1_X+PAD_WIDTH))&&(y==pad1y+PAD_HEIGHT)){
+		if((x==PAD_1_X||x==(PAD_1_X+PAD_WIDTH))&&(y<=pad1y+PAD_HEIGHT&&y>=pad1y)){
 			xVelocity*=-1;
 		}
-		if((x==(PAD_2_X)||x==(PAD_2_X+PAD_WIDTH))&&(y==pad2y+PAD_HEIGHT)){
+		if((x==PAD_2_X-40||x==(PAD_2_X-PAD_WIDTH))&&(y<=pad2y+PAD_HEIGHT&&y>=pad2y)){
 			xVelocity*=-1;
 		}
+				
+			
+		
 		this.repaint();
 	}
 
@@ -160,26 +159,42 @@ public class Paddle extends JPanel implements ActionListener, MouseListener, Mou
 
 		
 
-		  if(System.currentTimeMillis() - lastPressProcessed > 10) {
+		  if(System.currentTimeMillis() - lastPressProcessed > 1) {
 	            
-		if(e.getKeyCode()== KeyEvent.VK_W){
-			System.out.println("w pressed");
+		if(e.getKeyCode()== KeyEvent.VK_UP){
+			System.out.println("UP pressed");
 			if (pad2y>0){
-		pad2y-=20;
+		pad2y-=35;
 			}
 		
 		}
-		else if(e.getKeyCode()==KeyEvent.VK_S){
-			System.out.println("s pressed");
+		else if(e.getKeyCode()==KeyEvent.VK_DOWN){
+			System.out.println("DOWN pressed");
 			
 			if(pad2y<620){
-			pad2y+=20;
+			pad2y+=35;
 			}
 		}
 		this.repaint();
 		lastPressProcessed = System.currentTimeMillis();
 		  }
+	
+		  else if(e.getKeyCode()==KeyEvent.VK_P){
+			  if (paused){
+				  System.out.println("unpaused");
+				  paused=false;
+				  timer.start();
+				  this.repaint();
+				 
+			  }
+			  else{
+		System.out.println("paused");
+		paused=true;
+		timer.stop();
+		this.repaint();
+			  }
 	}
+}
 
 
 	@Override
@@ -190,11 +205,9 @@ public class Paddle extends JPanel implements ActionListener, MouseListener, Mou
 
 
 	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
-	}
-
 	
 }
-
+}
