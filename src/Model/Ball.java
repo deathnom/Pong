@@ -102,7 +102,7 @@ public class Ball extends JPanel implements ActionListener, MouseListener, Mouse
 		if((x==PAD_1_X||x==(PAD_1_X+PAD_WIDTH))&&(y<=pad1y+PAD_HEIGHT&&y>=pad1y)){
 			xVelocity*=-1;
 		}
-		if((x==PAD_2_X||x==(PAD_2_X+PAD_WIDTH))&&(y<=pad2y+PAD_HEIGHT&&y>=pad2y)){
+		if((x==PAD_2_X-40||x==(PAD_2_X-PAD_WIDTH))&&(y<=pad2y+PAD_HEIGHT&&y>=pad2y)){
 			xVelocity*=-1;
 		}
 				
