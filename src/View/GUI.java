@@ -66,9 +66,6 @@ public class GUI extends JFrame{
 
 		
 		panel2.add(b);
-
-//		panel2.add(b);
-//		panel2.add(p);
 		p.setBackground(new Color(1.0f, 1.0f, 1.0f, 0.5f));
 
 
